@@ -14,11 +14,14 @@ BLACK = (0, 0, 0)
 
 
 planets = [
-    'assets/planet1',
-    'assets/planet2',
-    'assets/planet3',
-    'assets/planet4',
+    'assets/planet1.jpg',
+    'assets/planet2.jpg',
+    'assets/planet3.jpg',
+    'assets/planet4.jpg',
 ]
+weapon = 'assets/weapon.jpg'
+
+
 
 
 running = True
