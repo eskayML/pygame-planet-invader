@@ -13,16 +13,9 @@ BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
 
 
-planets = [
-    'assets/planet1.jpg',
-    'assets/planet2.jpg',
-    'assets/planet3.jpg',
-    'assets/planet4.jpg',
-]
-weapon = 'assets/weapon.jpg'
 
-
-
+weapon = 'assets/gun.png'
+planet = 'assets/earth.png'
 
 running = True
 background = BLACK
