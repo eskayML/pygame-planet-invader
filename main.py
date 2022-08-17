@@ -16,7 +16,7 @@ BLACK = (0, 0, 0)
 
 weapon = 'assets/gun.png'
 planet = 'assets/earth.png'
-
+bg_image = 'assets/background.png'
 running = True
 background = BLACK
 while running:
