@@ -41,8 +41,8 @@ while running:
     if planet_rect.left < 0 or planet_rect.right > screen_width:
         planet_speed[0] = -planet_speed[0]
 
-    print(planet_rect.size)
-    print(weapon_rect.size)
+    # print(planet_rect.size)
+    # print(weapon_rect.size)
     screen.blit(planet, planet_rect)
     screen.blit(weapon, weapon_rect)
     pygame.display.update()
