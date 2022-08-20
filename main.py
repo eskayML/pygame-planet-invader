@@ -1,16 +1,11 @@
 import pygame
 from pygame.locals import *
-
+# font = pygame.font.SysFont('constantia', 48)
 screen_width, screen_height = 600, 500
 pygame.init()
 pygame.display.set_caption('Pygame Planet Invader')
 screen = pygame.display.set_mode((screen_width, screen_height))
 
-
-# RED = (255, 0, 0)
-# GREEN = (0, 255, 0)
-# BLUE = (0, 0, 255)
-# BLACK = (0, 0, 0)
 
 
 weapon = pygame.image.load('assets/weapon.png').convert()
@@ -31,8 +26,9 @@ bullet_rect.center = weapon_rect.center
 # as if it is being shot out of the gun
 
 planet_speed = [2, 0]
-bullet_speed = [0,3]
+bullet_speed = [0,-4]
 
+fire = False
 # GAME LOOP
 clock = pygame.time.Clock()
 running = True
@@ -41,19 +37,25 @@ while running:
         # print(event)
         if event.type == QUIT:
             running = False
-        if event.type == KEYDOWN:
-            bullet_rect = bullet_rect.move(bullet_speed)
-            if bullet_rect.top <= 0:
-                bullet_rect.center = weapon_rect.center
+        elif event.type == KEYDOWN:
+            fire = True
+            
+            
 
     # screen.blit(background,background_rect)
     planet_rect = planet_rect.move(planet_speed)
     if planet_rect.left < 0 or planet_rect.right > screen_width:
         planet_speed[0] = -planet_speed[0]
+        
+        
 
-    # print(planet_rect.size)
-    # print(weapon_rect.size)
-
+    if fire == True:
+        bullet_rect = bullet_rect.move(bullet_speed)
+    if bullet_rect.colliderect(planet_rect) or bullet_rect.top <=0:
+        bullet_rect.center = weapon_rect.center
+        fire = False
+        
+    screen.fill('black')
     screen.blit(bullet, bullet_rect)
     screen.blit(planet, planet_rect)
     screen.blit(weapon, weapon_rect)
